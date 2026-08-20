@@ -551,12 +551,14 @@ export default function CommandCenter() {
         <div className="bg-white rounded-lg border border-[#CBD5E1] shadow-sm p-5 flex flex-col items-center justify-between">
           <h3 className="text-sm font-bold text-[#0F172A] uppercase mb-2 w-full text-left">Sentinel-2 Compliance</h3>
           <div className="relative w-44 h-44 flex items-center justify-center my-2">
-            <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+            <svg className="w-full h-full" viewBox="0 0 100 100">
               <circle cx="50" cy="50" r="40" fill="transparent" stroke="#F1F5F9" strokeWidth="10" />
               <circle 
                 cx="50" cy="50" r="40" fill="transparent" stroke="#10B981" strokeWidth="10" 
                 strokeDasharray="251.2" 
                 strokeDashoffset={251.2 * (1 - kpis.complianceRatePct / 100)} 
+                strokeLinecap="round"
+                transform="rotate(-90 50 50)"
                 className="transition-all duration-1000" 
               />
             </svg>
