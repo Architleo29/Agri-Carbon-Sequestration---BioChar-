@@ -540,12 +540,12 @@ const FieldOperatorApp = () => {
   );
 
   return (
-    <div className="min-h-screen bg-[#07110e] flex items-center justify-center p-4">
+    <div className="min-h-screen min-h-[100dvh] bg-[#07110e] flex items-center justify-center p-0 sm:p-4">
       {/* Phone Frame */}
-      <div className="w-[375px] h-[820px] max-h-[92vh] bg-black rounded-[3rem] shadow-2xl relative overflow-hidden border-[8px] border-neutral-800 flex flex-col">
+      <div className="w-full sm:w-[385px] h-[100dvh] sm:h-[820px] bg-black sm:rounded-[3rem] sm:shadow-2xl relative overflow-hidden sm:border-[8px] sm:border-neutral-800 flex flex-col">
         
-        {/* Notch */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-36 h-6 bg-black rounded-b-2xl z-50"></div>
+        {/* Notch on Desktop */}
+        <div className="hidden sm:block absolute top-0 left-1/2 -translate-x-1/2 w-36 h-6 bg-black rounded-b-2xl z-50"></div>
 
         {/* Top Status Bar */}
         <StatusBar />

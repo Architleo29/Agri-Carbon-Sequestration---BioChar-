@@ -69,8 +69,8 @@ export default function CommandCenter() {
 
     return (
       <div className="space-y-6">
-        {/* KPI Grid - Fully interactive & synced with tabs */}
-        <div className="grid grid-cols-5 gap-4">
+        {/* KPI Grid - Responsive for Mobile & Desktop */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
           {[
             { label: 'Farmers', value: `${totalFarmers}`, sub: '1 Unified FPO', tab: 'farmers', c: 'text-[#0F172A]' },
             { label: 'Enrolled Acres', value: `${totalAcres.toLocaleString()} ac`, sub: '5 Regional Clusters', tab: 'farmers', c: 'text-[#0F172A]' },
@@ -86,27 +86,27 @@ export default function CommandCenter() {
             <div 
               key={i} 
               onClick={() => setActiveTab(kpi.tab)}
-              className="bg-white p-4 rounded-lg shadow-sm border border-[#CBD5E1] hover:border-[#10B981] hover:shadow transition-all cursor-pointer group"
+              className="bg-white p-3 sm:p-4 rounded-xl shadow-xs border border-[#CBD5E1] hover:border-[#10B981] hover:shadow-sm transition-all cursor-pointer group"
             >
               <div className="flex justify-between items-start">
-                <p className="text-xs text-[#64748B] font-semibold uppercase">{kpi.label}</p>
-                <ChevronRight size={14} className="text-[#94A3B8] opacity-0 group-hover:opacity-100 transition-opacity" />
+                <p className="text-[10px] sm:text-xs text-[#64748B] font-bold uppercase truncate">{kpi.label}</p>
+                <ChevronRight size={14} className="text-[#94A3B8] opacity-0 group-hover:opacity-100 transition-opacity shrink-0" />
               </div>
-              <p className={`text-xl font-bold mt-1 ${kpi.c}`}>{kpi.value}</p>
-              <p className="text-[10px] text-[#64748B] mt-1">{kpi.sub}</p>
+              <p className={`text-lg sm:text-xl font-black mt-1 ${kpi.c}`}>{kpi.value}</p>
+              <p className="text-[9px] sm:text-[10px] text-[#64748B] mt-0.5 truncate">{kpi.sub}</p>
             </div>
           ))}
         </div>
 
-        <div className="grid grid-cols-3 gap-6">
-          <div className="col-span-2 space-y-6">
-            {/* Pipeline Funnel - Interactive */}
-            <div className="bg-white p-5 rounded-lg shadow-sm border border-[#CBD5E1]">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="col-span-1 lg:col-span-2 space-y-6">
+            {/* Pipeline Funnel - Interactive & Responsive Scroll */}
+            <div className="bg-white p-4 sm:p-5 rounded-xl shadow-xs border border-[#CBD5E1]">
               <div className="flex justify-between items-center mb-4">
-                <h3 className="text-sm font-bold text-[#0F172A] uppercase">End-to-End dMRV Pipeline Funnel</h3>
-                <span className="text-xs text-[#64748B]">Click step to inspect</span>
+                <h3 className="text-xs sm:text-sm font-bold text-[#0F172A] uppercase">End-to-End dMRV Pipeline Funnel</h3>
+                <span className="text-[11px] text-[#64748B]">Click step to inspect</span>
               </div>
-              <div className="flex items-center text-xs space-x-1.5 pt-2">
+              <div className="overflow-x-auto no-scrollbar flex items-center text-xs space-x-2 pt-2 min-w-full pb-1">
                 {[
                   { label: 'Enrolled Acres', val: `${totalAcres} ac`, w: 'w-full', c: 'bg-[#0B1914]', tab: 'farmers' },
                   { label: 'Stubble Collected', val: `${stubbleT}t`, w: 'w-[92%]', c: 'bg-[#132E27]', tab: 'kilns' },

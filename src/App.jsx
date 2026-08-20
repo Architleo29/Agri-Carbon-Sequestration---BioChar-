@@ -89,7 +89,7 @@ export default function App() {
   const ActiveComponent = current.component
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] flex flex-col font-sans relative">
+    <div className="min-h-screen min-h-[100dvh] bg-[#F8FAFC] flex flex-col font-sans relative">
       {/* ─── Top Showcase Navigation Bar ─── */}
       <header className="bg-[#0B1914] text-white shadow-xl z-40 relative">
         {/* Value chain tour banner */}
@@ -308,10 +308,10 @@ export default function App() {
       </main>
 
       {/* ─── Floating Quick App Switcher Button (Bottom Right) ─── */}
-      <div className="fixed bottom-6 right-6 z-40">
+      <div className="fixed bottom-5 sm:bottom-6 right-4 sm:right-6 z-40" style={{ bottom: 'max(1.25rem, env(safe-area-inset-bottom, 1.25rem))' }}>
         <button
           onClick={() => setShowAppDrawer(true)}
-          className="flex items-center gap-2 px-4 py-2.5 bg-[#0B1914] text-white rounded-full shadow-2xl border border-[#10B981]/50 hover:bg-[#132E27] hover:border-[#10B981] hover:scale-105 transition-all cursor-pointer group"
+          className="flex items-center gap-2 px-4 py-3 sm:py-2.5 bg-[#0B1914] text-white rounded-full shadow-2xl border border-[#10B981]/50 hover:bg-[#132E27] hover:border-[#10B981] active:scale-95 transition-all cursor-pointer group"
           title="Switch Platform Application"
         >
           <Menu size={18} className="text-[#10B981] group-hover:rotate-90 transition-transform duration-300" />

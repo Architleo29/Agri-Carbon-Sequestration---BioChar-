@@ -32,35 +32,35 @@ const FarmerApp = () => {
 
   if (!lang) {
     return (
-      <div className="flex items-center justify-center w-full min-h-screen bg-[#F0FDF4] p-4 font-sans">
-        <div className="relative w-[375px] h-[812px] bg-white rounded-[40px] shadow-2xl overflow-hidden border-[8px] border-slate-900 flex flex-col items-center justify-center p-6">
-          <div className="absolute top-0 w-[150px] h-[30px] bg-slate-900 rounded-b-[20px] z-50"></div>
+      <div className="flex items-center justify-center w-full min-h-screen min-h-[100dvh] bg-[#F0FDF4] p-0 sm:p-4 font-sans">
+        <div className="relative w-full sm:w-[385px] h-[100dvh] sm:h-[812px] bg-white sm:rounded-[40px] sm:shadow-2xl overflow-hidden sm:border-[8px] sm:border-slate-900 flex flex-col items-center justify-center p-6">
+          <div className="hidden sm:block absolute top-0 w-[150px] h-[30px] bg-slate-900 rounded-b-[20px] z-50"></div>
           
-          <div className="w-full max-w-sm flex flex-col items-center space-y-10">
+          <div className="w-full max-w-sm flex flex-col items-center space-y-8">
             <div className="flex flex-col items-center space-y-4">
-              <div className="w-24 h-24 bg-[#059669] rounded-full flex items-center justify-center shadow-lg">
-                <Leaf className="w-12 h-12 text-white" />
+              <div className="w-20 h-20 sm:w-24 sm:h-24 bg-[#059669] rounded-full flex items-center justify-center shadow-lg">
+                <Leaf className="w-10 h-10 sm:w-12 sm:h-12 text-white" />
               </div>
               <h1 className="text-2xl font-bold text-[#0B1914] text-center">Agri-Carbon Platform</h1>
-              <p className="text-slate-500 text-center">Select your language / अपनी भाषा चुनें / ਆਪਣੀ ਭਾਸ਼ਾ ਚੁਣੋ</p>
+              <p className="text-sm text-slate-500 text-center">Select your language / अपनी भाषा चुनें / ਆਪਣੀ ਭਾਸ਼ਾ ਚੁਣੋ</p>
             </div>
 
-            <div className="w-full space-y-4">
+            <div className="w-full space-y-3.5">
               <button 
                 onClick={() => setLanguage('en')}
-                className="w-full h-16 bg-[#F0FDF4] border-2 border-[#10B981] rounded-2xl flex items-center justify-center space-x-3 text-lg font-semibold text-[#047857] hover:bg-[#10B981] hover:text-white transition-colors shadow-sm"
+                className="w-full h-14 sm:h-16 bg-[#F0FDF4] border-2 border-[#10B981] rounded-2xl flex items-center justify-center space-x-3 text-base sm:text-lg font-semibold text-[#047857] hover:bg-[#10B981] hover:text-white transition-colors shadow-sm active:scale-98"
               >
                 <span>English</span>
               </button>
               <button 
                 onClick={() => setLanguage('hi')}
-                className="w-full h-16 bg-[#F0FDF4] border-2 border-[#10B981] rounded-2xl flex items-center justify-center space-x-3 text-lg font-semibold text-[#047857] hover:bg-[#10B981] hover:text-white transition-colors shadow-sm"
+                className="w-full h-14 sm:h-16 bg-[#F0FDF4] border-2 border-[#10B981] rounded-2xl flex items-center justify-center space-x-3 text-base sm:text-lg font-semibold text-[#047857] hover:bg-[#10B981] hover:text-white transition-colors shadow-sm active:scale-98"
               >
                 <span>हिंदी (Hindi)</span>
               </button>
               <button 
                 onClick={() => setLanguage('pa')}
-                className="w-full h-16 bg-[#F0FDF4] border-2 border-[#10B981] rounded-2xl flex items-center justify-center space-x-3 text-lg font-semibold text-[#047857] hover:bg-[#10B981] hover:text-white transition-colors shadow-sm"
+                className="w-full h-14 sm:h-16 bg-[#F0FDF4] border-2 border-[#10B981] rounded-2xl flex items-center justify-center space-x-3 text-base sm:text-lg font-semibold text-[#047857] hover:bg-[#10B981] hover:text-white transition-colors shadow-sm active:scale-98"
               >
                 <span>ਪੰਜਾਬੀ (Punjabi)</span>
               </button>
@@ -146,10 +146,10 @@ const FarmerApp = () => {
   };
 
   return (
-    <div className="flex items-center justify-center w-full min-h-screen bg-[#F0FDF4] p-4 font-sans select-none">
-      <div className="relative w-[375px] h-[812px] bg-slate-50 rounded-[40px] shadow-2xl border-[8px] border-slate-900 flex flex-col">
+    <div className="flex items-center justify-center w-full min-h-screen min-h-[100dvh] bg-[#F0FDF4] p-0 sm:p-4 font-sans select-none">
+      <div className="relative w-full sm:w-[385px] h-[100dvh] sm:h-[812px] bg-slate-50 sm:rounded-[40px] sm:shadow-2xl sm:border-[8px] sm:border-slate-900 flex flex-col overflow-hidden">
         {renderTopBar()}
-        <div className="flex-1 overflow-y-auto no-scrollbar bg-slate-50 relative">
+        <div className="flex-1 overflow-y-auto no-scrollbar bg-slate-50 relative min-h-0">
           {renderScreen()}
         </div>
         {renderBottomNav()}
